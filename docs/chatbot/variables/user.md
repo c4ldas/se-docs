@@ -1,266 +1,231 @@
 ---
 id: user
+sidebar_label: "$(user)"
+description: "Comprehensive guide to the StreamElements Chatbot $(user) variable for streamers and moderators"
 tags:
   - chatbot
   - variable
+  - user
+keywords:
+  - streamelements
+  - chatbot
+  - user variable
+  - streamer tools
+  - chat commands
 ---
 
-# $(user)
+# $(user) Variable
 
-Displays the user’s display name
+## Overview
 
-#### Parameters
+The `$(user)` variable in StreamElements Chatbot allows you to access and display various user-related information in your chat messages and commands. These variables provide data such as usernames, loyalty points, ranks, and activity timestamps.
 
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
+:::tip Key Point
+`$(user)` can accept an optional username argument to retrieve information about any user, not just the command sender. When used without arguments, it behaves similarly to [`$(sender)`](sender.md).
+:::
 
-#### Example Input
+## Usage
 
+To use the `$(user)` variable, include it in your chat message or command response using the `$()` syntax. For example, `$(user)` will display the user's display name.
+
+- Without argument: `$(user)` refers to the command sender
+- With argument: `$(user username)` refers to the specified user
+
+## Available $(user) Variables
+
+### $(user)
+
+Displays the user's display name.
+
+**Example:**
 ```
 Current user: $(user)
+Current user: $(user adeithe)
+```
+**Output:** 
+```
+Current user: Styler
+Current user: Adeithe
 ```
 
-#### Example Output
+### $(user.name)
 
-```
-Current user: styler
-```
+Displays the user's display name in lowercase letters.
 
-## $(user.name)
-
-Displays the user’s display name in lowercase letters
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 Current user: $(user.name)
+Current user: $(user.name adeithe)
 ```
-
-#### Example Output
-
+**Output:** 
 ```
 Current user: styler
+Current user: adeithe
 ```
 
-## $(user.points)
+### $(user.points)
 
-Displays the user’s loyalty currency owned
+Displays the user's loyalty currency owned.
 
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) has $(user.points) points
+$(user adeithe) has $(user.points adeithe) points
+```
+**Output:** 
+```
+Styler has 100 points
+Adeithe has 150 points
 ```
 
-#### Example Output
+### $(user.points_rank)
 
-```
-styler has 100 points
-```
+Displays the user's rank on the loyalty currency leaderboard.
 
-## $(user.points_rank)
-
-Displays the user’s rank on the loyalty currency leaderboard
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is rank $(user.points_rank) on the leaderboard
+$(user adeithe) is rank $(user.points_rank adeithe) on the leaderboard
+```
+**Output:** 
+```
+Styler is rank 5/283 on the leaderboard
+Adeithe is rank 3/283 on the leaderboard
 ```
 
-#### Example Output
+### $(user.points_alltime_rank)
 
+Displays the user's rank on the all-time loyalty currency leaderboard.
+
+**Example:**
 ```
-styler is rank 5/283 on the leaderboard
+$(user) is rank $(user.points_alltime_rank) on the all-time leaderboard
+$(user adeithe) is rank $(user.points_alltime_rank adeithe) on the all-time leaderboard
 ```
-
-## $(user.points_alltime_rank)
-
-Displays the user’s rank on the alltime loyalty currency leaderboard
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Output:** 
 ```
-$(user) is rank $(user.points_alltime_rank) on the alltime leaderboard
+Styler is rank 5/283 on the all-time leaderboard
+Adeithe is rank 3/283 on the all-time leaderboard
 ```
 
-#### Example Output
+### $(user.level)
 
-```
-styler is rank 5/283 on the alltime leaderboard
-```
+Displays the user's access level.
 
-## $(user.level)
-
-Displays the user’s access level
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is level $(user.level)
+$(user adeithe) is level $(user.level adeithe)
+```
+**Output:** 
+```
+Styler is level 2000
+Adeithe is level 2500
 ```
 
-#### Example Output
+### $(user.lastmessage)
 
-```
-styler is level 2000
-```
+Displays the user's last typed message in the chat.
 
-## $(user.lastmessage)
-
-Displays the user’s last typed message in the chat
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) last typed: $(user.lastmessage)
+$(user adeithe) last typed: $(user.lastmessage adeithe)
+```
+**Output:** 
+```
+Styler last typed: !points
+Adeithe last typed: Hello everyone!
 ```
 
-#### Example Output
+### $(user.lastseen)
 
-```
-styler last typed: !points
-```
+Displays the time that a user was most recently seen in the viewer list or chat.
 
-## $(user.lastseen)
-
-Displays the time that a user was most recently seen in viewer list or chat
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) was last seen $(user.lastseen) ago
+$(user adeithe) was last seen $(user.lastseen adeithe) ago
+```
+**Output:** 
+```
+Styler was last seen 13m 15s ago
+Adeithe was last seen 5m 30s ago
 ```
 
-#### Example Output
+### $(user.lastactive)
 
-```
-styler was last seen 13m 15s ago
-```
+Displays the time that a user most recently typed a message in the chat.
 
-## $(user.lastactive)
-
-Displays the time that a user most recently typed a message in the chat
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) was last active $(user.lastactive) ago
+$(user adeithe) was last active $(user.lastactive adeithe) ago
+```
+**Output:** 
+```
+Styler was last active 13m 15s ago
+Adeithe was last active 5m 30s ago
 ```
 
-#### Example Output
+### $(user.time_online)
 
-```
-styler was last active 13m 15s ago
-```
+Displays the total time a user has spent watching the stream.
 
-## $(user.time_online)
-
-Displays the total time a user has been in the chat while stream is offline
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
-```
-$(user) has been in the chat for $(user.time_online)
-```
-
-#### Example Output
-
-```
-styler has been in the chat for 27m 16s
-```
-
-## $(user.time_online)
-
-Displays the user’s display name
-
-#### Parameters
-
-Displays the total time a user has spent watching the stream
-
-#### Example Input
-
+**Example:**
 ```
 $(user) has been watching the stream for $(user.time_online)
+$(user adeithe) has been watching the stream for $(user.time_online adeithe)
+```
+**Output:** 
+```
+Styler has been watching the stream for 27m 16s
+Adeithe has been watching the stream for 1h 15m 45s
 ```
 
-#### Example Output
+### $(user.time_online_rank)
 
-```
-styler has been watching the stream for 27m 16s
-```
+Displays the user's rank on the leaderboard for online time watched.
 
-## $(user.time_online_rank)
-
-Displays the user’s rank on the leaderboard for online time watched
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is rank $(user.time_online_rank) on the online leaderboard
+$(user adeithe) is rank $(user.time_online_rank adeithe) on the online leaderboard
+```
+**Output:** 
+```
+Styler is rank 5/283 on the online leaderboard
+Adeithe is rank 2/283 on the online leaderboard
 ```
 
-#### Example Output
+### $(user.time_offline_rank)
 
-```
-styler is rank 5/283 on the online leaderboard
-```
+Displays the user's rank on the leaderboard for offline time watched.
 
-## $(user.time_offline_rank)
-
-Displays the user’s rank on the leaderboard for offline time watched
-
-#### Parameters
-
-This variable accepts a username as input. If no username is provided, the variable will default to the user who triggered the command.
-
-#### Example Input
-
+**Example:**
 ```
 $(user) is rank $(user.time_offline_rank) on the offline leaderboard
+$(user adeithe) is rank $(user.time_offline_rank adeithe) on the offline leaderboard
+```
+**Output:** 
+```
+Styler is rank 5/283 on the offline leaderboard
+Adeithe is rank 2/283 on the offline leaderboard
 ```
 
-#### Example Output
+## Best Practices
 
-```
-styler is rank 5/283 on the offline leaderboard
-```
+1. Use `$(user)` without arguments when you need information about the command trigger.
+2. Use `$(user username)` when you need to reference other users or allow flexible user queries.
+3. Always provide clear examples and explanations when creating custom commands using these variables.
+
+## Troubleshooting
+
+- If a variable returns unexpected results, ensure you're using the correct syntax and that the user exists in your channel's database.
+- Remember that `$(user)` variables can accept arguments. If you only need information about the command sender, consider using [`$(sender)`](sender.md) instead.
+
+## Related Documentation
+
+- For information specifically about the command sender, see the [`$(sender)` variable documentation](sender.md).
+- For more detailed information on StreamElements variables and commands, refer to the official [StreamElements Documentation](https://dev.streamelements.com/docs).
+

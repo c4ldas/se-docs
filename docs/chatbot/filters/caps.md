@@ -1,10 +1,20 @@
 ---
 id: caps
+sidebar_label: "Caps"
+description: "Learn how to use the Caps filter to manage excessive capital letters in chat messages on StreamElements"
 tags:
-  - chatbot
-  - filters
+- chatbot
+- moderation
+- filters
+keywords:
+- StreamElements
+- chatbot
+- caps filter
+- moderation
+- chat management
 ---
-# Caps
+
+# Caps Filter
 
 The Caps filter helps manage the use of capital letters in chat messages. It checks the number and percentage of capital letters in a message and compares them with the set limits. If a message violates these limits, the filter takes action according to the configured settings.
 
